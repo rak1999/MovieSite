@@ -1,8 +1,18 @@
 import React from 'react'
+import { useGlobalContext } from './context'
 
 const Movies = () => {
+  const {movie} = useGlobalContext()
   return (
-    <div>Movies</div>
+    <>
+      {movie.map((currMovie)=>{
+        return (
+          <div>
+            <h2>{currMovie.Title}</h2>
+          </div>
+        )
+      })}
+    </>
   )
 }
 
